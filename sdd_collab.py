@@ -21515,7 +21515,7 @@ def apply_LoRA(p, SDXL=False, fuse=False):
         if 'weights' in l and bool(l['weights']):
           weight_args['weight_name'] = l['weights']
         #p.load_lora_weights(l['path'], adapter_name=l['name'], torch_dtype=torch.float16, **weight_args)
-        p.load_lora_weights(l['path'], adapter_name=''.join(rnd.choice(string.ascii_uppercase + string.digits) for _ in range(N)), torch_dtype=torch.float16, **weight_args)
+        p.load_lora_weights(l['path'], adapter_name=''.join(rnd.choice(string.ascii_uppercase + string.digits) for _ in range(12)), torch_dtype=torch.float16, **weight_args)
       p.set_adapters(adapters, adapter_weights=scales)
       if fuse:
         p.fuse_lora()
